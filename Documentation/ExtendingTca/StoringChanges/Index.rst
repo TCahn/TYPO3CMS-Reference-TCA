@@ -77,7 +77,7 @@ The advantage of this method is that all such changes are incorporated into
 .. important::
 
    Be aware that you cannot extend the TCA of extensions if it was configured within
-   its :file:`ext_tables.php` file, usually containing the "ctrl" section
+   its  file, usually containing the "ctrl" section
    referencing a "dynamicConfigFile". Please ask the extension author to switch
    to the :file:`Configuration/TCA/<tablename>.php` setup.
 
@@ -91,3 +91,5 @@ It is also possible to perform some special manipulations on
 :php:`$GLOBALS['TCA']` right before it is stored into cache, thanks to the
 :code:`tcaIsBeingBuilt` signal. This signal was introduced in
 TYPO3 CMS 6.2.1.
+Put all manipulations which can not be cached, for example Page-TS-config specific or website specific TCA-manipulations into :file:`ext_tables.php`. 
+
